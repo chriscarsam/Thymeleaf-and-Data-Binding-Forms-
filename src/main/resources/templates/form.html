@@ -39,7 +39,7 @@
 		<div>
 			<label for="email">Correo</label>
 			<div>
-				<input type="email" id="email" th:field="*{email}"/>
+				<input type="text" id="email" th:field="*{email}"/>
 			</div>
 			<div th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></div>
 		</div>
