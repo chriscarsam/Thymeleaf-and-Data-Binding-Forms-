@@ -10,15 +10,15 @@ import java.lang.annotation.Target;
 import javax.validation.Constraint;
 import javax.validation.Payload;
 
-@Constraint(validatedBy = IdentificadorRegexValidador.class)
+@Constraint(validatedBy = RequeridoValidador.class)
 @Retention(RUNTIME)
 @Target({ FIELD, METHOD })
-public @interface IdentificadorRegex {
-	
-	String message() default "Identificador inválido";
+public @interface Requerido {
+
+	String message() default "el campo es requerido - usando anotaciones";
 
 	Class<?>[] groups() default { };
 
 	Class<? extends Payload>[] payload() default { };
-
+	
 }
