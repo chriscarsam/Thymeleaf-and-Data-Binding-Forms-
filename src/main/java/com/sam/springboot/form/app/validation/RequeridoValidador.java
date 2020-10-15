@@ -14,7 +14,7 @@ public class RequeridoValidador implements ConstraintValidator<Requerido, String
 		if(value == null || !StringUtils.hasText(value)) {
 			return false;
 		}
-		return false;
+		return true;
 	}
 	
 }
