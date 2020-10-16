@@ -19,6 +19,7 @@ import org.springframework.web.bind.support.SessionStatus;
 
 import com.sam.springboot.form.app.models.domain.Usuario;
 import com.sam.springboot.form.app.validation.UsuarioValidador;
+import com.sam.springboot.form.editors.NombreMayusculaEditor;
 
 @Controller
 @SessionAttributes("usuario")
@@ -33,6 +34,9 @@ public class FormController {
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 		dateFormat.setLenient(false);
 		binder.registerCustomEditor(Date.class, "fechaNacimiento",new CustomDateEditor(dateFormat, true));
+		
+		binder.registerCustomEditor(String.class, "nombre" , new NombreMayusculaEditor());
+		binder.registerCustomEditor(String.class, "apellido" , new NombreMayusculaEditor());
 	}
 	
 	@GetMapping("/")
