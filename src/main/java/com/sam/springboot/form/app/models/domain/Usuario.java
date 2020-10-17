@@ -2,6 +2,7 @@ package com.sam.springboot.form.app.models.domain;
 
 import java.util.Date;
 
+import javax.validation.Valid;
 import javax.validation.constraints.Email;
 //import javax.validation.constraints.Future;
 import javax.validation.constraints.Max;
@@ -51,9 +52,9 @@ public class Usuario {
 	@Past
 	//@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date fechaNacimiento;
-	
-	@NotEmpty
-	private String pais;
+		
+	@Valid
+	private Pais pais;
 
 	public String getUsername() {
 		return username;
@@ -119,11 +120,11 @@ public class Usuario {
 		this.fechaNacimiento = fechaNacimiento;
 	}
 
-	public String getPais() {
+	public Pais getPais() {
 		return pais;
 	}
 
-	public void setPais(String pais) {
+	public void setPais(Pais pais) {
 		this.pais = pais;
 	}			
 	
