@@ -1,10 +1,10 @@
 package com.sam.springboot.form.app.models.domain;
 
-import javax.validation.constraints.NotNull;
+//import javax.validation.constraints.NotNull;
 
 public class Pais {
 
-	@NotNull
+	//@NotNull
 	private Integer id;
 	
 	private String codigo;

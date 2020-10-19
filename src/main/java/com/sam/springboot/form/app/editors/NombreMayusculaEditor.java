@@ -1,4 +1,4 @@
-package com.sam.springboot.form.editors;
+package com.sam.springboot.form.app.editors;
 
 import java.beans.PropertyEditorSupport;
 
