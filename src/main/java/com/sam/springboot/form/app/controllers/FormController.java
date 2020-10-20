@@ -71,6 +71,11 @@ public class FormController {
 		return "forward:/form";
 	}
 	
+	@ModelAttribute("genero")
+	public List<String> genero(){
+		return Arrays.asList("Hombre", "Mujer");
+	}
+	
 	@ModelAttribute("listaRoles")
 	public List<Role> listaRoles(){
 		return this.roleService.listar();
@@ -126,6 +131,7 @@ public class FormController {
 		usuario.setApellido("Test");
 		usuario.setIdentificador("123.456.789-K");
 		usuario.setHabilitar(true);
+		usuario.setValorSecreto("Algún valor secreto ****");
 		
 		model.addAttribute("titulo", "Formulario usuarios");
 		model.addAttribute("usuario", usuario);
