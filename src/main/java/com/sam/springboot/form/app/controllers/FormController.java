@@ -26,8 +26,10 @@ import org.springframework.web.bind.support.SessionStatus;
 import com.sam.springboot.form.app.editors.NombreMayusculaEditor;
 import com.sam.springboot.form.app.editors.PaisPropertyEditor;
 import com.sam.springboot.form.app.models.domain.Pais;
+import com.sam.springboot.form.app.models.domain.Role;
 import com.sam.springboot.form.app.models.domain.Usuario;
 import com.sam.springboot.form.app.services.PaisService;
+import com.sam.springboot.form.app.services.RoleService;
 import com.sam.springboot.form.app.validation.UsuarioValidador;
 
 @Controller
@@ -39,6 +41,9 @@ public class FormController {
 	
 	@Autowired
 	private PaisService paisService;
+		
+	@Autowired
+	private RoleService roleService;
 	
 	@Autowired
 	private PaisPropertyEditor paisEditor;
@@ -59,6 +64,11 @@ public class FormController {
 	@GetMapping("/")
 	public String home() {
 		return "forward:/form";
+	}
+	
+	@ModelAttribute("listaRoles")
+	public List<Role> listaRoles(){
+		return this.roleService.listar();
 	}
 	
 	@ModelAttribute("listaPaises")
