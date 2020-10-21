@@ -62,6 +62,7 @@ public class Usuario {
 
 	private Boolean habilitar;
 	
+	@NotEmpty
 	private String genero;
 	
 	private String valorSecreto;
