@@ -9,8 +9,9 @@
 	crossorigin="anonymous">
 </head>
 <body>
-	<h3 th:text="${titulo}"></h3>
+	
 	<div class="container">
+	<h3 th:text="${titulo}"></h3>
 		<form th:action="@{/form}" th:object="${usuario}" method="post">
 
 			<div class="form-group row">
